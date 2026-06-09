@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { getAllProductsShop } from "../../redux/actions/product";
 import styles from "../../styles/styles";
 import ProductCard from "../Route/ProductCard/ProductCard";
-import Ratings from "../Products/Ratings";
+import Ratings from "../products/Ratings";
 import { getAllEventsShop } from "../../redux/actions/event";
 import { productData } from "../../static/data";
 import {

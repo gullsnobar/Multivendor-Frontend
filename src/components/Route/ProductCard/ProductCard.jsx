@@ -18,7 +18,7 @@ import {
 import { useEffect } from "react";
 import { addTocart } from "../../../redux/actions/cart";
 import { toast } from "react-toastify";
-import Ratings from "../../Products/Ratings";
+import Ratings from "../../products/Ratings";
 
 const ProductCard = ({ data, isEvent }) => {
   const { wishlist } = useSelector((state) => state.wishlist);
