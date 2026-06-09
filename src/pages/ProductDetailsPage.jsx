@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import { useSelector } from "react-redux"
 import Footer from "../components/Layout/Footer"
 import Header from "../components/Layout/Header"
-import ProductDetails from "../components/products/productDetails"
+import ProductDetails from "../components/products/ProductDetails"
 import { productData } from "../static/data"
 
 const ProductDetailsPage = () => {
