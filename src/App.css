@@ -1,0 +1,160 @@
+html, body {
+  /* overflow-x: hidden; removed — this clips absolutely-positioned dropdowns */
+  scroll-behavior: smooth;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hide browser-native password reveal/clear icons so only our custom eye shows */
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+input::-webkit-credentials-auto-fill-button,
+input::-webkit-textfield-decoration-container,
+input::-webkit-clear-button {
+  display: none !important;
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+/* Ensure credentials autofill button hidden in Blink-based browsers */
+input[type="password"]::-webkit-textfield-decoration-container {
+  display: none !important;
+}
+
+/* Additional selectors to cover more browser implementations */
+input[type="password"]::-webkit-clear-button,
+input[type="password"]::-webkit-credentials-auto-fill-button,
+input[type="password"]::-webkit-textfield-decoration-container-button,
+input[type="password"]::-webkit-password-toggle-button,
+input::-webkit-password-toggle-button,
+input::-webkit-credentials-auto-fill-button,
+input::-webkit-clear-button {
+  display: none !important;
+  -webkit-appearance: none !important;
+}
+
+/* Fallback: hide any appearance that could show native controls */
+input[type="password"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Hide scrollbar for gallery thumbnails */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ========== FIX 1: Product Detail Two-Column Grid ========== */
+.product-detail-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+@media (max-width: 767px) {
+  .product-detail-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========== FIX 2: Tab Styles ========== */
+.tab {
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  padding: 14px 24px;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-weight: 500;
+  color: #6b7280;
+  transition: all 0.2s ease;
+}
+.tab.active {
+  border-bottom: 3px solid #E53E3E;
+  color: #E53E3E;
+  font-weight: 600;
+}
+.tab:hover:not(.active) {
+  color: #374151;
+  background-color: #f9fafb;
+}
+.tab-panel {
+  display: none;
+}
+.tab-panel:first-of-type {
+  display: block;
+}
+
+.greenColor {
+  color: #16a34a;
+  font-weight: 500;
+}
+
+.redColor {
+  color: #dc2626;
+  font-weight: 500;
+}
+
