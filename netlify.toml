@@ -2,6 +2,18 @@
   command = "npm run build"
   publish = "dist"
 
+# Proxy API requests to the backend — avoids CORS entirely
+# The 200! status makes this a rewrite (proxy), not a redirect
+# Order matters: specific rules MUST come before the catch-all
+[[redirects]]
+  from = "/api/*"
+  to = "https://multivendor-backend-pi.vercel.app/api/:splat"
+  status = 200
+  force = true
+  [redirects.headers]
+    X-Forwarded-Host = "capable-tiramisu-feb534.netlify.app"
+
+# SPA catch-all — must be LAST
 [[redirects]]
   from = "/*"
   to = "/index.html"
